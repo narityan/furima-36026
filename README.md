@@ -54,7 +54,7 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| post_cod           | integer    | null: false                    |
+| post_code          | string     | null: false                    |
 | prefecture_id      | integer    | null: false                    |
 | city               | string     | null: false                    |
 | house_name         | string     | null: false                    |
