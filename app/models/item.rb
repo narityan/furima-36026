@@ -10,6 +10,7 @@ class Item < ApplicationRecord
 
   with_options presence: true do
     validates :item_name
+    validates :image
     validates :introduction
     validates :price,         numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 , message: "範囲外です"}, format: { with: /\A[0-9]+\z/ }
   end
