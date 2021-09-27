@@ -4,11 +4,11 @@ RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
     @item.image = fixture_file_upload(('app/assets/images/flag.png'))
-end
+  end
 
   describe '商品登録' do
     context '商品登録できるとき' do
-      it "全ての項目が入力されていれば登録できる" do
+      it '全ての項目が入力されていれば登録できる' do
         expect(@item).to be_valid
       end
       it 'ログイン状態のユーザーのみ、商品出品ページへ遷移できること' do
@@ -17,13 +17,11 @@ end
       end
     end
 
-
-
     context '出品ができない時' do
       it '商品画像を1枚つけることが必須であること' do
         @item.image.key = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include{"Image can't be blank"}
+        expect(@item.errors.full_messages).to include { "Image can't be blank" }
       end
 
       it '商品名が必須であること' do
@@ -77,13 +75,13 @@ end
       it '売価格は、¥300~¥9,999,999の間のみ保存可能であること' do
         @item.price = '100'
         @item.valid?
-        expect(@item.errors.full_messages).to include "Price out of setting range"
+        expect(@item.errors.full_messages).to include 'Price out of setting range'
       end
 
       it '販売価格は半角数字のみ保存可能であること' do
         @item.price = '１００００'
         @item.valid?
-        expect(@item.errors.full_messages).to include "Price out of setting range"
+        expect(@item.errors.full_messages).to include 'Price out of setting range'
       end
     end
   end
