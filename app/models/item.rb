@@ -12,7 +12,7 @@ class Item < ApplicationRecord
     validates :item_name
     validates :image
     validates :introduction
-    validates :price,         numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 , message: "範囲外です"}, format: { with: /\A[0-9]+\z/ }
+    validates :price,         numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 , message: "out of setting range"}, format: { with: /\A[0-9]+\z/, message: "half-width number"}
   end
 
   with_options numericality:{ other_than: 1 , message: "can't be blank"} do
