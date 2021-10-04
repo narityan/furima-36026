@@ -39,10 +39,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of 4140080 (削除機能実装)
   end
 
   private
