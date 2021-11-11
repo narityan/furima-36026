@@ -1,12 +1,11 @@
 class PurchasesController < ApplicationController
 
   before_action :authenticate_user!, only: [:index]
-  before_action :set_item, only:[:index,]
+  before_action :set_item, only:[:index]
   before_action :move_to_index, only: [:index]
   before_action :move_to_path, only: [:index]
 
   def index
-    @item = Item.find(params[:item_id])
     @purchase_address = PurchaseAddress.new
 
   end
